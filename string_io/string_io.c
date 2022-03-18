@@ -6,8 +6,7 @@
 
 #define BUFF_SIZE 16
 
-char* read_string_from_stdin()
-{
+char* read_string_from_stdin() {
   char* str = malloc(BUFF_SIZE * sizeof(char));
   if (!str) {
     return NULL;
@@ -35,7 +34,7 @@ char* read_string_from_stdin()
     if (block_size == BUFF_SIZE) {
       block_size = 0;
       ++block_count;
-      
+
       char* tmp = malloc(block_count * BUFF_SIZE * sizeof(char));
       if (!tmp) {
         if (!str) {
@@ -62,8 +61,7 @@ char* read_string_from_stdin()
   return str;
 }
 
-char* read_string_from_file(FILE* fp)
-{
+char* read_string_from_file(FILE* fp) {
   char* str = malloc(BUFF_SIZE * sizeof(char));
   if (!str) {
     return NULL;
@@ -101,7 +99,7 @@ char* read_string_from_file(FILE* fp)
     if (block_size == BUFF_SIZE) {
       block_size = 0;
       ++block_count;
-      
+
       char* tmp = malloc(block_count * BUFF_SIZE * sizeof(char));
       if (!tmp) {
         if (!str) {
@@ -128,33 +126,28 @@ char* read_string_from_file(FILE* fp)
   return str;
 }
 
-int check_end_file(FILE* fp)
-{
+int check_end_file(FILE* fp) {
   char c = fgetc(fp);
   if (c == '{') {
     return 0;
-  }
-  else {
-    while (fgetc(fp) != '}');
+  } else {
+    while (fgetc(fp) != '}') continue;
     c = fgetc(fp);
     if (c == ',') {
       return 0;
-    }
-    else {
+    } else {
       return 1;
     }
   }
 }
 
-int check_for_compositions(FILE* fp)
-{
+int check_for_compositions(FILE* fp) {
   fseek(fp, 0, SEEK_SET);
   char c = fgetc(fp);
   if (c == '[') {             // File is not empty, there's 1+ composition
     fseek(fp, 0, SEEK_END);
     return 0;
-  }
-  else {                      // File is empty
+  } else {                      // File is empty
     fseek(fp, 0, SEEK_END);
     return 1;
   }

@@ -36,30 +36,36 @@ int read_data_from_file(char * author) {
   FILE* fp = fopen("data.json", "r");
   if (!fp) {
     delete_v(element);
-    return -1;
+    return 1;
   }
 
   char* str = NULL;
 
-  while (!check_end_file(fp)) {  
-    str = read_string_from_file(fp);
-    if (str) {
-      element->author = str;
+  while (!check_end_file(fp)) {
+    element->author = read_string_from_file(fp);
+    if (!element->author) {
+      delete_v(element);
+      return 1;
     }
 
-    str = read_string_from_file(fp);
-    if (str) {
-      element->performer = str;
+    element->performer = read_string_from_file(fp);
+    if (!element->performer) {
+      delete_v(element);
+      return 1;
     }
 
-    str = read_string_from_file(fp);
-    if (str) {
-      element->title = str;
+    element->title = read_string_from_file(fp);
+    if (!element->title) {
+      delete_v(element);
+      return 1;
     }
 
     str = read_string_from_file(fp);
     if (str) {
       element->duration = atoi(str);
+    } else {
+      delete_v(element);
+      return 1;
     }
 
     if (!strcmp(author, element->author)) {
@@ -78,12 +84,13 @@ int read_data_from_file(char * author) {
     element->author = NULL;
     element->performer = NULL;
     element->title = NULL;
+    str = NULL;
   }
 
   delete_v(element);
 
   if (fclose(fp) != 0) {
-    return -1;
+    return 1;
   }
 
   return 0;

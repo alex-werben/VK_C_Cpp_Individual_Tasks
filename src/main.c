@@ -6,24 +6,6 @@
 
 enum action_type { ADD = 1, VIEW, EXIT };
 
-char char_input()
-{
-  char c = '\0';
-  int prev = 0;
-  int d = 0;
-
-  while (d != '\n') {
-    
-    d = getchar();
-    break;
-  }
-  printf("%d\n", d);
-  // d = c;
-
-
-  return c;
-}
-
 int main(int argc, char* argv[]) {
   int c = 0;
 
@@ -38,7 +20,6 @@ int main(int argc, char* argv[]) {
       printf("Error: number must be written.\n");
       return 1;
     }
-    // char s = char_input();
 
     switch (c) {
       case ADD: add_composition(); break;

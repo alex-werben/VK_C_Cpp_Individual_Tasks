@@ -61,8 +61,7 @@ int write_data_to_file(music_composition* element) {
   if (!check_for_compositions(fp)) {
     fseek(fp, -2, SEEK_END);
     fprintf(fp, ",\n");
-  }
-  else {
+  } else {
     fseek(fp, 0, SEEK_SET);
     fprintf(fp, "[\n");
   }
