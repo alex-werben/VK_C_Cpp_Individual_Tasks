@@ -1,0 +1,68 @@
+[
+  {
+    "author": "qqfwd",
+    "performer": "fasd",
+    "title": "qwer",
+    "duration": "1234"
+  },
+  {
+    "author": "qwer",
+    "performer": "asdf",
+    "title": "qwer",
+    "duration": "1234"
+  },
+  {
+    "author": "Taylor Swift",
+    "performer": "Taylor Swift",
+    "title": "New York",
+    "duration": "1243"
+  },
+  {
+    "author": "AC/DC",
+    "performer": "AC/DC",
+    "title": "TNT",
+    "duration": "122"
+  },
+  {
+    "author": "John Lennon",
+    "performer": "John Lennon",
+    "title": "Yesterday",
+    "duration": "222"
+  },
+	{
+		"author": "AC/DC",
+		"performer": "AC/DC",
+		"title": "Thunder",
+		"duration": "287"
+	},
+	{
+		"author": "Zhuk",
+		"performer": "Zhukich",
+		"title": "LaLa",
+		"duration": "80"
+	},
+	{
+		"author": "Paul McCartney",
+		"performer": "Paul McCartney",
+		"title": "WTF",
+		"duration": "123"
+	},
+	{
+		"author": "Hello world",
+		"performer": "asdf",
+		"title": "asdf",
+		"duration": "1234"
+	},
+	{
+		"author": "Monica Geller",
+		"performer": "Monica Geller",
+		"title": "Friends",
+		"duration": "10"
+	},
+	{
+		"author": "Nat King",
+		"performer": "L-O-V-E",
+		"title": "LoL",
+		"duration": "111"
+	}
+]
