@@ -15,3 +15,6 @@ target_link_libraries(${PROJECT_NAME} ${VIEW_COMPOSITION_LIBRARIES} GTest::gtest
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${ADD_COMPOSITION_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${ADD_COMPOSITION_LIBRARIES} GTest::gtest_main)
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${STRING_IO_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${STRING_IO_LIBRARIES} GTest::gtest_main)
